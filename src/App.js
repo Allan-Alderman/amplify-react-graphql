@@ -79,7 +79,7 @@ const App = ({ signOut }) => {
             label="Note Name"
             labelHidden
             variation="quiet"
-            required
+            required 
           />
           <TextField
             name="description"
@@ -89,11 +89,17 @@ const App = ({ signOut }) => {
             variation="quiet"
             required
           />
+          <View
+            name="image"
+            as="input"
+            type="file"
+            style={{ alignSelf: "end" }}
+          />  
           <Button type="submit" variation="primary">
             Create Note
           </Button>
         </Flex>
-      </View>
+      </View>    
       <Heading level={2}>Current Notes</Heading>
       <View margin="3rem 0">
       {notes.map((note) => (
@@ -120,12 +126,6 @@ const App = ({ signOut }) => {
         </Flex>
       ))}
       </View>
-      <View
-        name="image"
-        as="input"
-        type="file"
-        style={{ alignSelf: "end" }}
-      />
       <Button onClick={signOut}>Sign Out</Button>
     </View>    
   );
